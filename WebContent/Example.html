@@ -1,0 +1,44 @@
+<html>
+    <head><link href="css/question.css" type="text/css" rel="stylesheet">
+    </head>
+<body>
+<p>Initial puzzle given in the <code>ex_board2.txt</code> file is below. You are white.</p>
+<img src="1.jpg">
+<p>Consider what happens when white plays the move <code>h5 e8</code></p>
+<img src="2.jpg">
+<p>Since black's king is under threat, it has to play either the move <code>h8 e8</code> or <code>f6 e8</code>.
+Note that these 2 moves are the <b>only</b> two moves that black can play.  <br>
+Also note that these 2 moves are exactly the moves given in the first line of <code>ex_opponent2.txt</code></p>
+
+<table>
+    <tr>
+        <th><code>f6 e8</code></th>
+        <th><code>h8 e8</code></th>
+    </tr>
+    <tr>
+        <td><img src="3.jpg"></td>
+        <td><img src="4.jpg">/td>
+    </tr>
+</table>
+<p>Since the first move in the first line of <code>ex_opponent2.txt</code> is <code>h8 e8</code>, we assume black plays that move. Now the move <code>d6 f7</code> is checkmate.</p>
+<img src="5.jpg">
+
+<p>Since we have reached checkmate with the moves <code>h5 e8</code> and <code>d6 f7</code>, we print these two moves to console.
+<br> Our answer is correct because we reached checkmate <b>and</b> also forced black to only be able to make the moves in <code>ex_opponent2.txt</code></p>
+<table>
+    <tr>
+        <th style="white-space:nowrap;">Console Output</th>
+    </tr>
+    <tr>
+        <td style="white-space:nowrap;">h5 e8 <br> d6 f7 </td>
+    </tr>
+</table>
+<p> Note that <b>if the solution had consisted of 3 moves</b> instead of 2, <code>ex_opponent2.txt</code> would contain 2 lines instead of 1. So, if that were the case:
+    <br>First move of the solution would have forced the moves in first line of <code>ex_opponent2.txt</code>
+    <br>Second move of the solution would have forced the moves in the second line of <code>ex_opponent2.txt</code>
+    <br>Third move of the solution would have reached checkmate.
+</p>
+
+
+</body>
+</html>

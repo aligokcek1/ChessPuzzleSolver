@@ -1,0 +1,154 @@
+<html><head>
+<link href="css/question.css" type="text/css" rel="stylesheet">
+<title>Question (teaching.codes)</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<h1>
+					Homework 5: <br><br>
+					<code>Recursive Chess Puzzle Solver (100 points)</code>
+				</h1>
+				<div>
+					Please read <a href="ReadMe.html">important information</a> first.
+				</div>
+				<div id="page1">
+					<h2>Description</h2>
+					<p>
+						Your task is to implement a <b>recursive</b> chess puzzle solver.
+					<p>
+					<ul>
+						<li>User will enter 2 lines of input. First line will be the name of the <code>board</code> file. Second line will be the name of the <code>opponentmoves</code> file.</li>
+						<li>You are given 2 example puzzle files with the names <code>ex_board1.txt</code>, <code>ex_board2.txt</code>, <code>ex_opponent1.txt</code> and <code>ex_opponent2.txt</code></li>
+						<li>First line of <code>board</code> file will be either <code>white</code> or <code>black</code>. This line describes the color of the chess pieces that you control.</li>
+						<li>Each remaining line of <code>board</code> file will contain name of a chess piece and its location separated by whitespace. (For example, <code>BQ a5</code>).
+						<br>
+						<ul>
+							<li>Locations will always be given in lowercase. (For example: <code>h5</code>)</li>
+							<li>In short, <code>board</code> file will describe the initial configuration of the puzzle.</li>
+							<li>Piece name encodings are given in the below table. </li>
+						</ul>
+						<table>
+							<thead>
+							  <tr>
+								<th>Piece Code</th>
+								<th>Piece Name</th>
+							  </tr>
+							</thead>
+							<tbody>
+							  <tr>
+								<td>BK</td>
+								<td>Black King</td>
+							  </tr>
+							  <tr>
+								<td>BQ</td>
+								<td>Black Queen</td>
+							  </tr>
+							  <tr>
+								<td>BB</td>
+								<td>Black Bishop</td>
+							  </tr>
+							  <tr>
+								<td>BN</td>
+								<td>Black Knight</td>
+							  </tr>
+							  <tr>
+								<td>BR</td>
+								<td>Black Rook</td>
+							  </tr>
+							  <tr>
+								<td>BP</td>
+								<td>Black Pawn</td>
+							  </tr>
+							  <tr>
+								<td>WK</td>
+								<td>White King</td>
+							  </tr>
+							  <tr>
+								<td>WQ</td>
+								<td>White Queen</td>
+							  </tr>
+							  <tr>
+								<td>WB</td>
+								<td>White Bishop</td>
+							  </tr>
+							  <tr>
+								<td>WN</td>
+								<td>White Knight</td>
+							  </tr>
+							  <tr>
+								<td>WR</td>
+								<td>White Rook</td>
+							  </tr>
+							  <tr>
+								<td>WP</td>
+								<td>White Pawn</td>
+							  </tr>
+							</tbody>
+							</table>
+					</li>
+					<li>Each line of <code>opponentmoves</code> file will either contain a single move or contain a list of moves separated by a comma (,).
+						<ul>
+							<li>A move is two locations separated by a whitespace. (For example: the move <code>a5 b6</code> means moving the piece on <code>a5</code> to <code>b6</code>).</li>
+						</ul>
+					</li>
+					<li>Your main task is to find moves for the given color that achieves a checkmate. However, there are further constraints:
+						<ul>
+							<li>Your first move should <b>force</b> your opponent to only be able to make the moves given in the first line of <code>opponentmoves</code> file.</li>
+							<li>In other words, after you make your first move, only <b>valid</b> moves your opponent can make should be the moves in the first line of <code>opponentmoves</code> file.</li>
+							<li>If there are multiple moves in a line of <code>opponentmoves</code> file, <b>always</b> assume the opponent will choose to make the first move in the list.</li>
+							<li>Likewise, after your second move, your opponent's only valid moves should be the moves in the second line of <code>opponentmoves</code> file.</li>
+							<li>With a similar logic, for example, if there are 5 lines in <code>opponentmoves</code> file, you need to find 6 moves that achieves a checkmate and <b>print it.</b></li>
+							<li>As long as you assume opponent will always do the first move in every corresponding line, you will find a unique solution.</li>
+							<li>For further clarification, check the examples. Also make sure you check the <code>Example.html</code> file in <code>/WebContent</code> folder by opening it on your browser.</li>
+						</ul>
+					</li>
+					<li>You need to consider valid moves for every chess piece. However, please <b>ignore</b> the following special moves: En passant, Castle, Pawn Promotion.</li>
+					<li>You can assume the given puzzle will always have a solution.</li>
+					</ul>
+						Check the examples for further clarification.
+					</p>
+					<p>
+						<b>Recommendation:</b> It is recommended that you implement a function to visualize the board on the console so that you debug your problems easier. Even though we don't expect you to print the board, it would be helpful for you to be able to see what is going on.
+					</p>
+					<p>
+						<b>Warning:</b> You are not allowed to use imports, and topics that haven't been covered this semester.
+					</p>
+
+					<p>
+						<b>Important Note:</b> The main function that is going to search for puzzle solutions (by trying out moves) should be implemented <b>recursively</b>. Otherwise, you might get a reduction in grading.
+					</p>
+					<b>Examples:</b>
+					<table>
+						<thead>
+						  <tr>
+							<th>Input</th>
+							<th>Content of board file</th>
+							<th>Content of opponent file</th>
+							<th>Output</th>
+						  </tr>
+						</thead>
+						<tbody>
+						  <tr>
+							<td style="white-space: nowrap;">ex_board1.txt<br>ex_opponent1.txt</td>
+							<td style="white-space: nowrap;">white<br>BR a8<br>BP a7<br>WP a2<br>WR a1<br>BP b7<br>BP b2<br>BB c8<br>BP c7<br>BN c6<br>BB c5<br>WB c4<br>WP c2<br>BQ d8<br>BP d6<br>WN d5<br>BK g8<br>WP d3<br>BP e5<br>WP e4<br>WK e1<br>BR f7<br>BP f6<br>BP f5<br>WP f2<br>WN g6<br>WP g2<br>BP h7<br>WQ h6<br>WP h2<br>WR h1</td>
+							<td style="white-space: nowrap;">d8 f6</td>
+							<td style="white-space: nowrap;">d5 f6<br>h6 f8</td>
+						  </tr>
+						  <tr>
+							<td style="white-space: nowrap;">ex_board2.txt<br>ex_opponent2.txt</td>
+							<td style="white-space: nowrap;">white<br>BR a8<br>BP a7<br>WP a2<br>WR a1<br>BN b8<br>BP b7<br>WP b2<br>BB c8<br>BP c7<br>WN c3<br>WP c2<br>WB c1<br>BK d8<br>BP d7<br>WN d6<br>WP d2<br>BB e7<br>WP e4<br>WK e1<br>BN f6<br>WB f1<br>BR h8<br>BP h7<br>WQ h5<br>WP h2<br>BQ h1</td>
+							<td style="white-space: nowrap;">h8 e8,f6 e8</td>
+							<td style="white-space: nowrap;">h5 e8<br>d6 f7</td>
+						  </tr>
+						</tbody>
+						</table>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</body></html>

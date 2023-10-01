@@ -1,0 +1,27 @@
+white
+BR a8
+BP a7
+WP a2
+WR a1
+BN b8
+BP b7
+WP b2
+BB c8
+BP c7
+WN c3
+WP c2
+WB c1
+BK d8
+BP d7
+WN d6
+WP d2
+BB e7
+WP e4
+WK e1
+BN f6
+WB f1
+BR h8
+BP h7
+WQ h5
+WP h2
+BQ h1
